@@ -58,7 +58,7 @@ class Person(models.Model):
     def __str__(self):
         if self.died:
             return f"{self.last_name}, {self.first_name} ({self.born}-{self.died})"
-        return f"{self.name} {self.first_name} ({self.born})"
+        return f"{self.last_name} {self.first_name} ({self.born})"
 
 
 class Role(models.Model):

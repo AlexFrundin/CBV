@@ -7,6 +7,11 @@
 {%block main%}
 <h1>{{object}}</h1>
 <p class="lead"> {{object.head}}</p>
+<div>
+  <p>Director - {{object.director.all}}</p>
+  <p>Writers - {{object.writers.all}}</p>
+  <p>Actors - {{object.actors.all}}</p>
+</div>
 {% endblock %}
 
 
