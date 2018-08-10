@@ -1,14 +1,14 @@
 from django.test import TestCase
 from django.test.client import RequestFactory
-from django.urls.base import reverse
+from django.urls.base import reverse, reverse_lazy
 
 from core.models import Movie
 from core.views import MovieList
 
 class MovieListPaginationTestCase(TestCase):
     ACTIVE_PAGINATION_HTML = """
-    <li class "page-item active">
-    <a href="{}?page={}" class="page-link">{}</a>
+    <li class 'page-item active'>
+    <a href='{}?page={}' class='page-link'>{}</a>
     </li>
     """
     def setUp(self):
@@ -19,7 +19,7 @@ class MovieListPaginationTestCase(TestCase):
                 runtime=100,
             )
     def testFirstPage(self):
-        movie_list_path = reverse('core:MovieList')
+        movie_list_path = reverse_lazy('core:MovieList')
 
         request = RequestFactory().get(path=movie_list_path)
         response = MovieList.as_view()(request)
