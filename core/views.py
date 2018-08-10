@@ -5,7 +5,7 @@ from core.models import Movie, Person
 
 class MovieList(ListView):
     model = Movie
-    paginate_by = 10
+    paginate_by = 2
 
 
 class MovieDetail(DetailView):
